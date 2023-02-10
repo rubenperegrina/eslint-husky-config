@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "eslint-prettier-husky-config": {
+    "eslint-husky-config": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/eslint-prettier-husky-config",
+            "outputPath": "dist/eslint-husky-config",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "eslint-prettier-husky-config:build:production"
+              "browserTarget": "eslint-husky-config:build:production"
             },
             "development": {
-              "browserTarget": "eslint-prettier-husky-config:build:development"
+              "browserTarget": "eslint-husky-config:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "eslint-prettier-husky-config:build"
+            "browserTarget": "eslint-husky-config:build"
           }
         },
         "test": {
@@ -96,6 +96,16 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html",
+              "src/**/*.scss"
+            ]
           }
         }
       }
